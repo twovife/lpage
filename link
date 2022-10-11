@@ -1,0 +1,40 @@
+  <a href="#" class="col service-card h-75">
+                <div
+                  class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg"
+                  style="background-image: url('./assets/imgs/tipography.png')"
+                >
+                  <div class="d-flex justify-content-center flex-column h-100 p-5 pb-3 text-shadow-1">
+                    <h2 class="mb-4 display-6 lh-1 fw-bold py-5">Jual Domba</h2>
+                  </div>
+                </div>
+              </a>
+              <a href="#" class="col service-card">
+                <div
+                  class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg"
+                  style="background-image: url('./assets/imgs/tipography.png')"
+                >
+                  <div class="d-flex justify-content-center flex-column h-100 p-5 pb-3 text-shadow-1">
+                    <h2 class="mb-4 display-6 lh-1 fw-bold py-5">Pakan Konsentrat</h2>
+                  </div>
+                </div>
+              </a>
+              <a href="#" class="col service-card">
+                <div
+                  class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg"
+                  style="background-image: url('./assets/imgs/tipography.png')"
+                >
+                  <div class="d-flex justify-content-center flex-column h-100 p-5 pb-3 text-shadow-1">
+                    <h2 class="mb-4 display-6 lh-1 fw-bold py-5">Aqiqah</h2>
+                  </div>
+                </div>
+              </a>
+              <a href="#" class="col service-card">
+                <div
+                  class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg"
+                  style="background-image: url('./assets/imgs/tipography.png')"
+                >
+                  <div class="d-flex justify-content-center flex-column h-100 p-5 pb-3 text-shadow-1">
+                    <h2 class="mb-4 display-6 lh-1 fw-bold py-5">Kelas Ternak</h2>
+                  </div>
+                </div>
+              </a>
