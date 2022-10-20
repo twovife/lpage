@@ -3,11 +3,18 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/noframework.waypoints.min.js"
+      integrity="sha512-fHXRw0CXruAoINU11+hgqYvY/PcsOWzmj0QmcSOtjlJcqITbPyypc8cYpidjPurWpCnlB8VKfRwx6PIpASCUkQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
     <title>DD Farm</title>
     <script type="module" crossorigin src="./assets/index.c24c9957.js"></script>
-    <link rel="stylesheet" href="./assets/index.618b954b.css" />
+    <link rel="stylesheet" href="./assets/index.7b19542a.css" />
   </head>
-  <body>
+  <body id="body">
     <nav class="sticky-top">
       <div class="d-flex justify-content-between align-items-center container py-2 navbar-wrapper container-wrapper">
         <div class="navbar-brand d-flex align-items-center gap-2 text-green-500">
@@ -32,8 +39,11 @@
               <path d="m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z" />
             </svg>
           </button>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Layanan</a></li>
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#goatlist">Domba</a></li>
+          <li><a href="#aqiqoh">Aqiqah</a></li>
+          <li><a href="#lainnya">Lainnya</a></li>
+          <li><a href="#map" class="btn btn-green-500 text-white">Temukan Kami</a></li>
         </ul>
       </div>
     </nav>
@@ -43,30 +53,16 @@
         <div class="hero-wrapper">
           <div class="row row-cols-1 row-cols-lg-2">
             <div class="col d-flex flex-column justify-content-center align-items-start px-5">
-              <h2 class="display-4 fw-bold text-green-500">DD Farm</h2>
-              <div class="display-3 fw-normal">Sentra Ternak Domba Berkualitas</div>
+              <h2 class="display-4 fw-semibold text-green-500">DD Farm</h2>
+              <div class="display-3">Bingung Mau Qurban <br />Atau Aqiqah?</div>
               <p class="text-secondary opacity-75 fs-6">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Amet, a ex ut at exercitationem recusandae, voluptates dolore vel qui numquam eligendi
-                soluta ipsa, iure alias.
+                Kami adalah solusi untuk anda yang ingin ber-Qurban dan Aqiqah dengan budget yang terjangkau, amanah, dan gampang
               </p>
-              <div class="d-flex gap-2">
-                <button class="btn btn-outline-green-500 btn-lg px-4">Explore</button>
-                <button class="btn btn-green-500 btn-lg px-4" data-bs-toggle="modal" data-bs-target="#exampleModal">Send Message</button>
+              <div class="d-flex gap-2 herobutton overflow-hidden">
+                <a href="#sub-hero" class="btn btn-outline-green-500 btn-lg px-4">Explore</a>
+                <button class="btn btn-green-500 btn-lg px-4">Kirim Whatsapp</button>
               </div>
-              <div class="mt-5 d-flex gap-2">
-                <!-- whatsapp -->
-                <a
-                  href="https://api.whatsapp.com/send/?phone=6281233302284"
-                  target="_blank"
-                  role="button"
-                  class="btn btn-outline-success d-flex align-items-center py-2 px-2 rounded-circle"
-                >
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" fill="currentColor" viewBox="0 0 16 16">
-                    <path
-                      d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"
-                    ></path>
-                  </svg>
-                </a>
+              <div class="mt-5 d-flex gap-2 position-relative overflow-hidden buttongroup">
                 <!-- instagram -->
                 <a
                   href="https://www.instagram.com/aziznrihsan"
@@ -74,20 +70,20 @@
                   role="button"
                   class="btn btn-outline-danger d-flex align-items-center py-2 px-2 rounded-circle"
                 >
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
                     <path
                       d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"
                     />
                   </svg>
                 </a>
                 <!-- facebook -->
-                <button type="button" class="btn btn-outline-primary d-flex align-items-center py-2 px-2 rounded-circle">
+                <a href="www.google.com" target="_blank" role="button" class="btn btn-outline-primary d-flex align-items-center py-2 px-2 rounded-circle">
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
                     <path
                       d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"
                     />
                   </svg>
-                </button>
+                </a>
                 <!-- maps -->
                 <a
                   target="_blank"
@@ -105,34 +101,38 @@
               </div>
             </div>
             <div class="col d-flex justify-content-center align-items-center position-relative hero-images">
-              <img class="position-absolute" src="./assets/heroimagaes.7dc7070c.png" />
+              <img class="position-absolute" src="./assets/7278598.6db9eea9.png" />
             </div>
           </div>
         </div>
       </div>
     </section>
-    <section class="mb-4">
-      <div class="container">
-        <div class="display-4 fst-italic w-75 mx-auto text-center mb-3">Mendedikasikan diri untuk memenuhi kebutuhan Domba nasional</div>
-        <div class="rounded row p-2 d-flex flex-row justify-content-around align-items-center flex-wrap gap-3">
-          <div class="card p-3 shadow-sm d-flex flex-row gap-3 align-items-center col-12 col-lg-3">
+
+    <section class="mb-5 opacity-0" id="sub-hero">
+      <div class="container px-5 py-3">
+        <div class="display-4 fst-italic w-75 mx-auto text-center mb-3 section-title">Mendedikasikan diri untuk memenuhi kebutuhan Domba nasional</div>
+        <div id="card-hero" class="rounded row p-2 d-flex flex-row justify-content-around align-items-center flex-wrap gap-3">
+          <div class="card p-3 shadow-sm d-flex flex-row gap-3 align-items-center col-12 col-lg-3 over">
             <img src="./assets/aset1.4ad90c75.png" style="object-fit: cover" height="100px" width="100px" alt="" srcset="" />
             <div>
-              <h3><span>48</span>+ Peternak</h3>
+              <h3 class="display-4 fw-semibold m-0"><span class="counter1"></span> <span>+</span></h3>
+              <h4 class="text-secondary fs-5 fw-bold">Peternak</h4>
               <p class="lh-1">Bekerjasama memenuhi permintaan customer.</p>
             </div>
           </div>
-          <div class="card p-3 shadow-sm d-flex flex-row gap-3 align-items-center col-12 col-lg">
-            <img src="./assets/aset2.5e9c0c37.png" style="object-fit: cover" height="100px" width="100px" alt="" srcset="" />
+          <div class="card p-3 shadow-sm d-flex flex-row gap-3 align-items-center col-12 col-lg over">
+            <img src="./assets/aset2.b0dbeb32.png" style="object-fit: cover" height="100px" width="100px" alt="" srcset="" />
             <div>
-              <h3><span>2000</span>+ Kapasitas Kandang</h3>
+              <h3 class="display-4 fw-semibold m-0"><span class="counter2"></span> <span>+</span></h3>
+              <h4 class="text-secondary fs-5 fw-bold">Kapasitas Kandang</h4>
               <p class="lh-1">kapasitas kandang koloni untuk penggemukan domba, untuk menunjang kualitas domba yang sehat dan berkualitas.</p>
             </div>
           </div>
-          <div class="card p-3 shadow-sm d-flex flex-row gap-3 align-items-center col-12 col-lg-3">
+          <div class="card p-3 shadow-sm d-flex flex-row gap-3 align-items-center col-12 col-lg-3 over">
             <img src="./assets/aset3.f807a4f9.png" style="object-fit: cover" height="100px" width="100px" alt="" srcset="" />
             <div>
-              <h3><span>200</span>+ Terjual</h3>
+              <h3 class="display-4 fw-semibold m-0"><span class="counter3"></span> <span>+</span></h3>
+              <h4 class="text-secondary fs-5 fw-bold">Terjual</h4>
               <p class="lh-1">setiap bulan langsung ketangan konsumen.</p>
             </div>
           </div>
@@ -140,84 +140,363 @@
       </div>
     </section>
 
-    <section class="bg-green-100 position-relative kontur mb-4 d-flex justify-content-center service">
-      <img src="./assets/tipography.b538a065.png" />
-      <div class="container">
-        <div class="row py-3 d-flex flex-column flex-lg-row" style="min-height: 100%">
+    <!-- layanan -->
+    <section id="service" class="position-relative kontur mb-5 d-flex justify-content-center service opacity-0">
+      <!-- <img src="../assets/imgs/tipography.png" /> -->
+      <div class="container px-5 py-3">
+        <div class="row d-flex flex-column flex-lg-row" style="min-height: 100%">
           <div class="col-12 col-lg-4">
             <div class="d-flex flex-column h-100 justify-content-lg-start justify-content-center text-center text-lg-start">
-              <h1 class="display-3 fst-italic fw-normal">Service Andalan Kami</h1>
-              <p class="text-secondary text-opacity-75">Kami menyediakan beberapa produk unggulan yang sudah melalui tahapan lab dan sertifikasi halal</p>
+              <h1 class="display-3 fst-italic fw-normal">Mengapa Harus <span class="text-green-500 fw-semibold">DD Farm</span>?</h1>
+              <p class="text-secondary fs-4 text-opacity-75"></p>
             </div>
           </div>
           <div class="col service-detail d-flex justify-content-center align-items-center">
-            <div class="row row-cols-2 row-cols-lg-4 g-1 align-items-center">
-              <a href="#" class="col-6 col-lg-3 flex-column d-flex justify-content-center align-items-center">
-                <div
-                  class="card card-cover h-100 w-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg"
-                  style="background-image: url('./assets/tipography.b538a065.png')"
-                >
-                  <div class="d-flex justify-content-center h-100 flex-column p-3 text-shadow-1 text-center text-lg-start position-relative service-card">
-                    <h2 class="display-6 lh-1 fw-bold position-relative">Jual Domba</h2>
-                    <div class="position-absolute w-100 h-100 top-0"></div>
-                  </div>
+            <div class="a" style="transform: skewX(-10deg)">
+              <div class="d-flex align-items-center gap-3">
+                <h2 class="display-2 fw-normal text-green-500 fst-italic">1</h2>
+                <div class="text-secondary fs-4">
+                  Harga Stabil Bahkan Menjelang Hari Raya Qurban, dikarenakan terjaganya stock untuk memenuhi kebutuhan masyarakat
                 </div>
-              </a>
-              <a href="#" class="col-6 col-lg-3 flex-column d-flex justify-content-center align-items-center">
-                <div
-                  class="card card-cover h-100 w-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg"
-                  style="background-image: url('./assets/tipography.b538a065.png')"
-                >
-                  <div class="d-flex justify-content-center h-100 flex-column p-3 text-shadow-1 text-center text-lg-start position-relative service-card">
-                    <h2 class="display-6 lh-1 fw-bold position-relative">Pakan Konsentat</h2>
-                    <div class="position-absolute w-100 h-100 top-0"></div>
-                  </div>
-                </div>
-              </a>
-              <a href="#" class="col-6 col-lg-3 flex-column d-flex justify-content-center align-items-center">
-                <div
-                  class="card card-cover h-100 w-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg"
-                  style="background-image: url('./assets/tipography.b538a065.png')"
-                >
-                  <div class="d-flex justify-content-center h-100 flex-column p-3 text-shadow-1 text-center text-lg-start position-relative service-card">
-                    <h2 class="display-6 lh-1 fw-bold position-relative">Aqiqah</h2>
-                    <div class="position-absolute w-100 h-100 top-0"></div>
-                  </div>
-                </div>
-              </a>
-              <a href="#" class="col-6 col-lg-3 flex-column d-flex justify-content-center align-items-center">
-                <div
-                  class="card card-cover h-100 w-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg"
-                  style="background-image: url('./assets/tipography.b538a065.png')"
-                >
-                  <div class="d-flex justify-content-center h-100 flex-column p-3 text-shadow-1 text-center text-lg-start position-relative service-card">
-                    <h2 class="display-6 lh-1 fw-bold position-relative">Kelas Ternak</h2>
-                    <div class="position-absolute w-100 h-100 top-0"></div>
-                  </div>
-                </div>
-              </a>
+              </div>
+              <div class="d-flex align-items-center gap-3">
+                <h2 class="display-2 fw-normal text-green-500 fst-italic">2</h2>
+                <div class="text-secondary fs-4">Domba dengan kualitas terbaik asli diternak dari kandang DD Farm</div>
+              </div>
+              <div class="d-flex align-items-center gap-3">
+                <h2 class="display-2 fw-normal text-green-500 fst-italic">3</h2>
+                <div class="text-secondary fs-4">Melibatkan warga duafa sebagai penggerak utama, sehingga membantu mengangkat perekonomian warga duafa</div>
+              </div>
             </div>
-            <!-- <div class="row  h-100 bg-warning">a</div> -->
           </div>
         </div>
       </div>
     </section>
 
-    <!-- layanan -->
-
-    <section class="min-vh-100">
-      <div class="container">
-        <div class="card rounded-3 border-0 bg-green-100 p-2 d-flex flex-row position-relative">
-          <div>
-            <div class="card-title fs-3 fw-semibold text-secondary"><span class="display-3 fw-semibold text-green-500">D</span>omba Kualitas Premium</div>
+    <section id="goatlist" style="min-height: 50vh" class="mb-5 d-flex justify-content-center service">
+      <div class="container position-relative bg-green-100 rounded-5">
+        <img src="./assets/farmhouse.3d106796.png" class="pricelist-images" />
+        <div class="py-3 px-5 row position-relative slogan py-4" style="z-index: 10; text-shadow: 1px 1px 1 px #fff">
+          <h1>Kambing Murah <br />Daging Melimpah</h1>
+          <div class="fs-5">Kapan lagi beli kambing murah tapi kualitas bagus dan daging yang melimpah</div>
+          <div class="fs-5">kambing DD Farm , buat Qurban dijamin ndak ngisin ngisini</div>
+          <div class="fs-5">Buruan hubungi kami langsung dari <span class="text-green-500 fw-bold fs-4">Whatsapp Anda</span></div>
+        </div>
+        <div class="py-4 pb-5 px-5 row">
+          <div class="col-12 col-lg-3">
+            <div class="card shadow bg-transparent p-3 mb-4 mb-lg-0">
+              <h3 class="text-center">Standart</h3>
+              <div class="text-center fw-semibold text-green-500 goat-price"><span class="fs-1">Rp. 1,900</span><small class="fs-5">,000</small></div>
+              <p class="text-center fw-bold fs-5">/ Ekor</p>
+              <div style="width: 75%; height: 12px" class="bg-green-500 mx-auto rounded-pill shadow-lg"></div>
+              <ul class="px-3 py-3">
+                <li class="mb-3 text-green-500 fw-semibold fs-5">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" fill="currentColor" class="bi bi-check-circle" viewBox="0 0 16 16">
+                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                    <path
+                      d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z"
+                    />
+                  </svg>
+                  <span class="text-dark">Bobot 23 - 25 Kg</span>
+                </li>
+                <li class="mb-3 text-green-500 fw-semibold fs-5">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" fill="currentColor" class="bi bi-check-circle" viewBox="0 0 16 16">
+                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                    <path
+                      d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z"
+                    />
+                  </svg>
+                  <span class="text-dark">Ready untuk Aqiqah</span>
+                </li>
+                <li class="mb-3 text-green-500 fw-semibold fs-5">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" fill="currentColor" class="bi bi-check-circle" viewBox="0 0 16 16">
+                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                    <path
+                      d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z"
+                    />
+                  </svg>
+                  <span class="text-dark">Ready untuk Kurban</span>
+                </li>
+                <li class="mb-3 text-green-500 fw-semibold fs-5">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" fill="currentColor" class="bi bi-check-circle" viewBox="0 0 16 16">
+                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                    <path
+                      d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z"
+                    />
+                  </svg>
+                  <span class="text-dark">Jantan / Betina</span>
+                </li>
+                <li class="mb-3 text-green-500 fw-semibold fs-5">
+                  <a href="#" role="button" class="btn btn-outline-green-500">Pesan Sekarang</a>
+                </li>
+              </ul>
+            </div>
           </div>
-          <div class="position-relative">
-            <img src="./assets/domba.b63420e9.jpg" class="position-absolute w-100 h-100 start-0 top-0" />
+          <div class="col-12 col-lg-3">
+            <div class="card shadow bg-transparent p-3 mb-4 mb-lg-0">
+              <h3 class="text-center">Super</h3>
+              <div class="text-center fw-semibold text-green-500 goat-price"><span class="fs-1">Rp. 2,300</span><small class="fs-5">,000</small></div>
+              <p class="text-center fw-bold fs-5">/ Ekor</p>
+              <div style="width: 75%; height: 12px" class="bg-green-500 mx-auto rounded-pill shadow-lg"></div>
+              <ul class="px-3 py-3">
+                <li class="mb-3 text-green-500 fw-semibold fs-5">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" fill="currentColor" class="bi bi-check-circle" viewBox="0 0 16 16">
+                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                    <path
+                      d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z"
+                    />
+                  </svg>
+                  <span class="text-dark">Bobot 26 - 29 Kg</span>
+                </li>
+                <li class="mb-3 text-green-500 fw-semibold fs-5">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" fill="currentColor" class="bi bi-check-circle" viewBox="0 0 16 16">
+                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                    <path
+                      d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z"
+                    />
+                  </svg>
+                  <span class="text-dark">Ready untuk Aqiqah</span>
+                </li>
+                <li class="mb-3 text-green-500 fw-semibold fs-5">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" fill="currentColor" class="bi bi-check-circle" viewBox="0 0 16 16">
+                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                    <path
+                      d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z"
+                    />
+                  </svg>
+                  <span class="text-dark">Ready untuk Kurban</span>
+                </li>
+                <li class="mb-3 text-green-500 fw-semibold fs-5">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" fill="currentColor" class="bi bi-check-circle" viewBox="0 0 16 16">
+                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                    <path
+                      d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z"
+                    />
+                  </svg>
+                  <span class="text-dark">Jantan / Betina</span>
+                </li>
+                <li class="mb-3 text-green-500 fw-semibold fs-5">
+                  <a href="#" role="button" class="btn btn-outline-green-500">Pesan Sekarang</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-12 col-lg-3">
+            <div class="card shadow p-3 mb-4 mb-lg-0 border-green-500 bg-green-200 bg-opacity-50">
+              <h3 class="text-center fw-bold">Premium</h3>
+              <div class="text-center fw-bold text-green-500 goat-price"><span class="fs-1">Rp. 2,500</span><small class="fs-5">,000</small></div>
+              <p class="text-center fw-bold fs-5">/ Ekor</p>
+              <div style="width: 75%; height: 12px" class="bg-green-500 mx-auto rounded-pill shadow-lg"></div>
+              <ul class="px-3 py-3">
+                <li class="mb-3 text-green-500 fw-semibold fs-5">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" fill="currentColor" class="bi bi-check-circle" viewBox="0 0 16 16">
+                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                    <path
+                      d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z"
+                    />
+                  </svg>
+                  <span class="text-dark">Bobot 30 - 32 Kg</span>
+                </li>
+                <li class="mb-3 text-green-500 fw-semibold fs-5">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" fill="currentColor" class="bi bi-check-circle" viewBox="0 0 16 16">
+                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                    <path
+                      d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z"
+                    />
+                  </svg>
+                  <span class="text-dark">Ready untuk Aqiqah</span>
+                </li>
+                <li class="mb-3 text-green-500 fw-semibold fs-5">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" fill="currentColor" class="bi bi-check-circle" viewBox="0 0 16 16">
+                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                    <path
+                      d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z"
+                    />
+                  </svg>
+                  <span class="text-dark">Ready untuk Kurban</span>
+                </li>
+                <li class="mb-3 text-green-500 fw-semibold fs-5">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" fill="currentColor" class="bi bi-check-circle" viewBox="0 0 16 16">
+                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                    <path
+                      d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z"
+                    />
+                  </svg>
+                  <span class="text-dark">Jantan / Betina</span>
+                </li>
+                <li class="mb-3 text-green-500 fw-semibold fs-5">
+                  <a href="#" role="button" class="btn btn-green-500">Pesan Sekarang</a>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
+    <section id="aqiqoh" class="mb-5">
+      <div class="container px-5 py-3 position-relative rounded-5">
+        <div class="mx-auto text-center">
+          <h1>Mau Aqiqah Murah Tanpa Report?</h1>
+          <h2><span class="text-green-500">DD Farm </span>Juga Punya Solusinya</h2>
+        </div>
+      </div>
+      <div class="container mx-auto py-3 sate-kambing row overflow-hidden">
+        <div class="col-12 col-lg-4 aqiqohimg position-relative">
+          <img
+            src="./assets/makanan.2075906b.png"
+            class="w-100 position-relative bg-green-500 shadow rounded-circle border border-5 border-green-100 h-100"
+            alt=""
+            srcset=""
+          />
+        </div>
+        <div class="col bg-cream-500 py-3 aqiqah-wrapper">
+          <h1 class="display-5 fst-italic">Aqiqah yang sudah terjamin Amanah</h1>
+          <div class="row row-cols-2 p-3 g-3">
+            <div class="col">
+              <div class="card bg-transparent p-2 shadow">
+                <div class="row p-2 d-flex text-center gap-2">
+                  <div class="col-12 col-lg-4">
+                    <img src="./assets/halal.fb1f0b85.png" width="100px" height="100px" style="object-fit: contain" class="bg-white rounded-circle p-3" />
+                  </div>
+                  <div class="col d-flex flex-column align-items-center">
+                    <p class="fw-bold mb-0 fs-4">Enak</p>
+                    <p class="fw-semibold">Dari Perawatan Domba Sampai Dengan Penyembelihan Di Awasi dan Dipastikan Sesuai Syariat</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card bg-transparent p-2 shadow">
+                <div class="row p-2 d-flex text-center gap-2">
+                  <div class="col-12 col-lg-4">
+                    <img src="./assets/halal.fb1f0b85.png" width="100px" height="100px" style="object-fit: contain" class="bg-white rounded-circle p-3" />
+                  </div>
+                  <div class="col d-flex flex-column align-items-center">
+                    <p class="fw-bold mb-0 fs-4">Halal</p>
+                    <p class="fw-semibold">Dari Perawatan Domba Sampai Dengan Penyembelihan Di Awasi dan Dipastikan Sesuai Syariat</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card bg-transparent p-2 shadow">
+                <div class="row p-2 d-flex text-center gap-2">
+                  <div class="col-12 col-lg-4">
+                    <img src="./assets/halal.fb1f0b85.png" width="100px" height="100px" style="object-fit: contain" class="bg-white rounded-circle p-3" />
+                  </div>
+                  <div class="col d-flex flex-column align-items-center">
+                    <p class="fw-bold mb-0 fs-4">Terjangkau</p>
+                    <p class="fw-semibold">Dari Perawatan Domba Sampai Dengan Penyembelihan Di Awasi dan Dipastikan Sesuai Syariat</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col d-flex justify-content-end align-items-end">
+              <button class="btn btn-green-500 btn-lg fst-italic">Informasi Lanjut</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="lainnya" class="mb-5">
+      <div class="container px-4 py-3">
+        <h1 class="text-center mb-3">Produk Lainnya</h1>
+        <div class="row d-flex">
+          <div class="col-6 px-2">
+            <div class="card text-center d-flex justify-content-between h-100 p-3">
+              <div>
+                <div class="display-6">Pakan Konsentrat</div>
+                <p class="w-75 mx-auto">Kami juga melayani pembelian pakan Konsentrat untuk petani domba yang membutuhkan pakan domba konsentrat</p>
+              </div>
+              <button class="ms-auto btn btn-green-500 btn-sm fst-italic">See More</button>
+            </div>
+          </div>
+          <div class="col-6 px2">
+            <div class="card text-center d-flex justify-content-between h-100 p-3">
+              <div>
+                <div class="display-6">Kelas Ternak</div>
+                <p class="w-75 mx-auto">
+                  Kami juga melayani kelas kusus atau seminar seputar peternakan dengan mendatangkan beberapa ahli dalam bidang peternakan sebagai narasumber
+                  kami
+                </p>
+              </div>
+              <button class="ms-auto btn btn-green-500 btn-sm fst-italic">See More</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="map" class="mb-5">
+      <h1 class="text-center py-4">DD Farm Maps</h1>
+      <div class="container bg-green-100 rounded-5 p-4">
+        <div class="card rounded-4 overflow-hidden position-relative">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d178951.72804451574!2d111.51038687878919!3d-7.649572981401998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e79bd32e9b70dab%3A0x388ad326977ba2a9!2sDompet%20Dhuafa%20Farm%20Madiun!5e0!3m2!1sid!2sid!4v1666102490584!5m2!1sid!2sid"
+            width="100%"
+            height="600"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+      </div>
+    </section>
+
+    <section id="sendme" class="mb-5">
+      <div class="container bg-cream-500 rounded-5">
+        <div class="d-flex gap-4 flex-column flex-lg-row justify-content-center align-items-center p-4">
+          <div class="w-25">
+            <img src="./assets/farmhouse.3d106796.png" width="100%" />
+          </div>
+          <div class="w-75 text-center text-lg-start">
+            <h1>Tertarik Dengan Kami ?</h1>
+            <p class="fs-5 text-secondary">Silahkan Tinggalkan Nomor anda dengan klick tombol dibawah ini, agar kami bisa menawarkan promo kepada anda!</p>
+            <button class="btn btn-green-500 btn-lg" data-bs-toggle="modal" data-bs-target="#exampleModal">Kirim Pesan Sekarang !</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container bg-green-100 rounded-5">
+        <div class="d-flex p-4">
+          <div class="w-50">
+            <h1 class="text-green-500">DD FARM</h1>
+            <p class="mb-0">Jl. Mangga, Area Sawah/Kebun, Jatisari, Kec. Geger</p>
+            <p class="mb-0">Madiun - Jawatimur</p>
+            <p class="mb-0">0812-1911-9102</p>
+          </div>
+          <div class="w-50 text-end">
+            <h5 class="fw-bold">Powered By :</h5>
+            <a class="me-2" href="https://jagoan.cloud/">
+              <img
+                src="https://jagoan.cloud/wp-content/uploads/2022/06/cropped-Logo-JC-New-Head-1-150x39.png"
+                class="p-2 bg-green-500 rounded-3 shadow"
+                height="40"
+              />
+            </a>
+            <a class="me-2" href="https://jagoan.cloud/">
+              <img
+                src="https://academy.alterra.id/wp-content/uploads/2022/06/Logo-Colour-Transparant-1.png"
+                class="p-2 bg-green-500 rounded-3 shadow"
+                height="40"
+              />
+            </a>
+            <a class="me-2" href="https://jagoan.cloud/">
+              <img
+                src="https://static.wixstatic.com/media/e37d76_2299a4b4ac454ccc92ce60e7ba7c0d08~mv2.png/v1/crop/x_0,y_0,w_2708,h_709/fill/w_157,h_41,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Fichier%2050.png"
+                class="p-2 bg-green-500 rounded-3 shadow"
+                height="40"
+              />
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
     <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered">
@@ -242,8 +521,8 @@
               </div>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button type="submit" class="btn btn-primary">Send</button>
+              <button type="button" class="btn btn-outline-green-500" data-bs-dismiss="modal">Close</button>
+              <button type="submit" class="btn btn-green-500">Send</button>
             </div>
           </form>
         </div>
@@ -262,6 +541,125 @@
         }
       };
       setNavbar(false);
+
+      // anime js hero
+      let domHero = document.querySelector("#hero");
+      const heroPoint = new Waypoint({
+        element: domHero,
+        handler: function (direction) {
+          let tl = anime.timeline({
+            easing: "easeOutExpo",
+            duration: 750,
+          });
+          tl.add({
+            targets: ".buttongroup a",
+            delay: anime.stagger(300),
+            translateY: ["50", 0],
+          }).add(
+            {
+              targets: ".herobutton button",
+              delay: anime.stagger(300),
+              translateY: ["50", 0],
+            },
+            1000
+          );
+          this.destroy();
+        },
+        offset: "100%",
+      });
+
+      let services = document.querySelector("#service");
+      let subHero = document.querySelector("#sub-hero");
+      const servicePoint = new Waypoint({
+        element: services,
+        handler: function (direction) {
+          services.classList.remove("opacity-0");
+          subHero.classList.remove("opacity-0");
+          let tl = anime.timeline({
+            easing: "easeOutExpo",
+            duration: 2500,
+          });
+
+          tl.add({
+            targets: "#service",
+            width: ["0%", "100%"],
+            opacity: ["0%", "100%"],
+          })
+            .add(
+              {
+                targets: "#service h1",
+                translateY: [-100, 0],
+                opacity: ["0%", "100%"],
+              },
+              800
+            )
+            .add(
+              {
+                targets: "#service .a .d-flex",
+                delay: anime.stagger(300),
+                translateY: [-100, 0],
+                opacity: ["0%", "100%"],
+              },
+              1000
+            )
+            .add(
+              {
+                targets: "#card-hero .card",
+                delay: anime.stagger(300),
+                translateY: [-100, 0],
+                opacity: ["0%", "100%"],
+              },
+              1500
+            )
+            .add(
+              {
+                targets: "#card-hero .card *",
+                delay: anime.stagger(100),
+                translateY: [-100, 0],
+                opacity: ["0%", "100%"],
+              },
+              1500
+            )
+            .add(
+              {
+                targets: ".section-title",
+                translateY: [-100, 0],
+                opacity: ["0%", "100%"],
+              },
+              2000
+            )
+            .add(
+              {
+                targets: ".counter1",
+                innerHTML: [0, 48],
+                round: 1,
+                easing: "easeInOutExpo",
+              },
+              1500
+            )
+            .add(
+              {
+                targets: ".counter2",
+                innerHTML: [0, 2000],
+                round: 1,
+                easing: "easeInOutExpo",
+              },
+              1600
+            )
+            .add(
+              {
+                targets: ".counter3",
+                innerHTML: [0, 250],
+                round: 1,
+                easing: "easeInOutExpo",
+              },
+              2200
+            );
+
+          this.destroy();
+        },
+        offset: "100%",
+      });
     </script>
   </body>
 </html>

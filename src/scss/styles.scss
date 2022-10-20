@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
 $green-500: #7ab259;
 $green-200: #bed8ad;
@@ -12,7 +12,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   margin: 0;
   padding: 0;
-  font-family: "Roboto", "sans-serif";
+  font-family: "Poppins", sans-serif;
 }
 ul {
   margin-bottom: 0 !important;
@@ -109,6 +109,7 @@ nav {
     transform: skewY(-4deg);
     border-radius: 0 0 24px 24px;
     box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+    overflow: hidden;
   }
   .row {
     position: absolute;
@@ -119,8 +120,10 @@ nav {
   }
   .hero-images {
     img {
-      left: -10%;
-      width: 110%;
+      right: 0;
+      bottom: 11%;
+      width: 70%;
+      border-radius: 0 0 24px 0;
     }
   }
 }
@@ -139,7 +142,6 @@ nav {
   }
 }
 .service {
-  min-height: 70vh;
   .service-detail {
     min-height: 100%;
     .row {
@@ -170,6 +172,46 @@ nav {
   }
 }
 
+#goatlist {
+  .pricelist-images {
+    position: absolute;
+    width: 75%;
+    bottom: -5%;
+    right: 0;
+  }
+  .card {
+    backdrop-filter: blur(10px);
+    text-shadow: 0.5px 0.5px 0.5px #9d9d9d;
+  }
+  .slogan {
+    backdrop-filter: blur(2px);
+  }
+}
+
+.aqiqohimg {
+  z-index: 10;
+  img {
+    z-index: 10;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 50%;
+    background: $cream-500;
+    z-index: 8;
+  }
+}
+
+.sate-kambing {
+  box-shadow: 0 0.5rem 1rem $cream-100;
+}
+.aqiqah-wrapper {
+  border-radius: 0 0 2rem 2rem;
+}
+
 @media (min-width: 992px) {
   .navbar-wrapper {
     .navbar-menu {
@@ -183,14 +225,16 @@ nav {
   }
   .hero-wrapper {
     .hero-images {
+      overflow: hidden;
       img {
-        left: -25%;
-        width: 120%;
+        right: 0;
+        bottom: 7%;
+        width: 90%;
+        border-radius: 0 0 24px 0;
       }
     }
   }
   .service {
-    min-height: 50vh;
     .service-detail {
       min-height: 100%;
       .row {
@@ -201,6 +245,39 @@ nav {
         }
       }
     }
+  }
+
+  #goatlist {
+    .pricelist-images {
+      position: absolute;
+      width: 30%;
+      bottom: 0;
+      right: 0;
+    }
+    .slogan {
+      backdrop-filter: none;
+    }
+  }
+
+  .aqiqohimg {
+    z-index: 10;
+    img {
+      z-index: 10;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 50%;
+      height: 100%;
+      background: $cream-500;
+      z-index: 8;
+    }
+  }
+
+  .aqiqah-wrapper {
+    border-radius: 0 2rem 2rem 0;
   }
 }
 @import "../node_modules/bootstrap/scss/functions";
