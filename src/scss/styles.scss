@@ -12,6 +12,8 @@ body {
   -moz-osx-font-smoothing: grayscale;
   margin: 0;
   padding: 0;
+}
+* {
   font-family: "Poppins", sans-serif;
 }
 ul {
@@ -21,10 +23,11 @@ ul {
     list-style-type: none;
   }
 }
-.asd {
-  height: 100%;
-  background: #000;
+
+.spacing1 {
+  letter-spacing: 1px;
 }
+
 nav {
   background-color: rgba(255, 255, 255, 0.581);
   backdrop-filter: blur(10px);
@@ -87,7 +90,7 @@ nav {
 }
 
 .hero-wrapper {
-  min-height: 80vh;
+  min-height: 70vh;
   width: 100%;
   position: relative;
   &::after,
@@ -101,16 +104,17 @@ nav {
   &::after {
     height: 80%;
     top: 0;
-    border-radius: 24px 24px 0 0;
+    border-radius: 32px 32px 0 0;
   }
   &::before {
-    height: 30%;
+    height: 50%;
     bottom: 0;
-    transform: skewY(-4deg);
-    border-radius: 0 0 24px 24px;
+    transform: skewY(-5deg);
+    border-radius: 0 0 32px 32px;
     box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
     overflow: hidden;
   }
+
   .row {
     position: absolute;
     top: 0;
@@ -121,95 +125,107 @@ nav {
   .hero-images {
     img {
       right: 0;
-      bottom: 11%;
-      width: 70%;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 100%;
       border-radius: 0 0 24px 0;
     }
   }
 }
 
-.kontur {
-  overflow: hidden;
+.carousel {
+  background: $green-100;
   img {
-    z-index: 10;
-    position: absolute;
-    mix-blend-mode: overlay;
-    object-fit: cover;
-  }
-  .container {
-    position: relative;
-    z-index: 11;
+    display: block;
+    height: 200px;
   }
 }
-.service {
-  .service-detail {
-    min-height: 100%;
-    .row {
-      width: 100%;
-      min-height: 100%;
-      a {
-        height: 20rem;
-        text-decoration: none;
-        .service-card {
-          h2 {
-            z-index: 10;
-          }
-          div {
-            background-color: $green-500;
-            opacity: 50%;
-            left: -100%;
-            z-index: 9;
-            transition: 0.6s;
-          }
-          &:hover {
-            div {
-              left: 0;
-            }
-          }
-        }
-      }
+
+.imagepopup {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 100; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.9); /* Black w/ opacity */
+  .imagepopup-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+  }
+  .close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    &:hover,
+    &:focus {
+      color: #bbb;
+      text-decoration: none;
+      cursor: pointer;
+    }
+  }
+  @-webkit-keyframes zoom {
+    from {
+      -webkit-transform: scale(0);
+    }
+    to {
+      -webkit-transform: scale(1);
+    }
+  }
+
+  @keyframes zoom {
+    from {
+      transform: scale(0);
+    }
+    to {
+      transform: scale(1);
     }
   }
 }
 
-#goatlist {
-  .pricelist-images {
-    position: absolute;
-    width: 75%;
-    bottom: -5%;
-    right: 0;
+#aqiqoh {
+  .imagewrapper {
+    position: relative;
+    padding: 10px;
+    img {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      z-index: 3;
+    }
+    &:before {
+      position: absolute;
+      background: $cream-500;
+      content: "";
+      width: 100%;
+      height: 100%;
+      z-index: 2;
+      right: 0;
+      bottom: 0;
+      border: 0.6rem solid $cream-200;
+      border-radius: 99999px;
+    }
+    &:after {
+      position: absolute;
+      background: $cream-200;
+      content: "";
+      width: 100%;
+      height: 50%;
+      z-index: 1;
+      right: 0;
+      bottom: 0;
+    }
   }
-  .card {
-    backdrop-filter: blur(10px);
-    text-shadow: 0.5px 0.5px 0.5px #9d9d9d;
-  }
-  .slogan {
-    backdrop-filter: blur(2px);
-  }
-}
-
-.aqiqohimg {
-  z-index: 10;
-  img {
-    z-index: 10;
-  }
-  &::after {
-    content: "";
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    width: 100%;
-    height: 50%;
-    background: $cream-500;
-    z-index: 8;
-  }
-}
-
-.sate-kambing {
-  box-shadow: 0 0.5rem 1rem $cream-100;
-}
-.aqiqah-wrapper {
-  border-radius: 0 0 2rem 2rem;
 }
 
 @media (min-width: 992px) {
@@ -227,57 +243,48 @@ nav {
     .hero-images {
       overflow: hidden;
       img {
-        right: 0;
-        bottom: 7%;
-        width: 90%;
+        right: 50%;
+        bottom: 50%;
+        transform: translateX(50%) translateY(-50%);
+        width: 70%;
         border-radius: 0 0 24px 0;
+        z-index: 0;
       }
     }
   }
-  .service {
-    .service-detail {
-      min-height: 100%;
-      .row {
+  #aqiqoh {
+    .imagewrapper {
+      position: relative;
+      padding: 10px;
+      img {
+        width: 400px;
+        height: 400px;
+        position: relative;
+        z-index: 3;
+      }
+      &:before {
+        position: absolute;
+        background: $cream-500;
+        content: "";
         width: 100%;
-        min-height: 100%;
-        a {
-          height: 20rem;
-        }
+        height: 100%;
+        z-index: 2;
+        right: 0;
+        top: 0;
+        border: 0.6rem solid $cream-200;
+        border-radius: 99999px;
+      }
+      &:after {
+        position: absolute;
+        background: $cream-200;
+        content: "";
+        width: 50%;
+        height: 100%;
+        z-index: 1;
+        right: 0;
+        top: 0;
       }
     }
-  }
-
-  #goatlist {
-    .pricelist-images {
-      position: absolute;
-      width: 30%;
-      bottom: 0;
-      right: 0;
-    }
-    .slogan {
-      backdrop-filter: none;
-    }
-  }
-
-  .aqiqohimg {
-    z-index: 10;
-    img {
-      z-index: 10;
-    }
-    &::after {
-      content: "";
-      position: absolute;
-      right: 0;
-      top: 0;
-      width: 50%;
-      height: 100%;
-      background: $cream-500;
-      z-index: 8;
-    }
-  }
-
-  .aqiqah-wrapper {
-    border-radius: 0 2rem 2rem 0;
   }
 }
 @import "../node_modules/bootstrap/scss/functions";
