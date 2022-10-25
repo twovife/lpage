@@ -90,7 +90,7 @@ nav {
 }
 
 .hero-wrapper {
-  min-height: 70vh;
+  min-height: 90vmax;
   width: 100%;
   position: relative;
   &::after,
@@ -122,14 +122,11 @@ nav {
     height: 100%;
     z-index: 6;
   }
-  .hero-images {
-    img {
-      right: 0;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 100%;
-      border-radius: 0 0 24px 0;
-    }
+}
+
+.hero-images {
+  img {
+    width: 75%;
   }
 }
 
@@ -240,15 +237,10 @@ nav {
     }
   }
   .hero-wrapper {
+    min-height: 70vh;
     .hero-images {
-      overflow: hidden;
       img {
-        right: 50%;
-        bottom: 50%;
-        transform: translateX(50%) translateY(-50%);
-        width: 70%;
-        border-radius: 0 0 24px 0;
-        z-index: 0;
+        width: 100%;
       }
     }
   }
